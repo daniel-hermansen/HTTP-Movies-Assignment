@@ -44,6 +44,15 @@ const UpdateMovie = props => {
             .catch(err => console.log("There has been an error", err));
     };
 
+    const handleStars = (event) => {
+        setItem({
+            ...item,
+             stars: [event.target.value]
+        })
+     }
+  
+  
+
     return (
         <div>
             <h2>Update Movie</h2>
@@ -75,7 +84,7 @@ const UpdateMovie = props => {
                 <input
                     type="string"
                     name="stars"
-                    onChange={changeHandler}
+                    onChange={handleStars}
                     placeholder="stars"
                     value={item.stars}
                 />
